@@ -1,7 +1,7 @@
 # Welcome to the Leyden Prototype Repository!
 
 The purpose of the Leyden repository is to prototype improvements in 
-startup time, intime to peak performance, and in footprint of Java programs, as a part of 
+startup time, time to peak performance, and footprint of Java programs, as a part of 
 [Project Leyden](https://openjdk.org/projects/leyden). We would like to solicit feedback from
 the Java community, with the hope that some of these improvements can be eventually
 incoporated in future Java releases.
@@ -243,10 +243,9 @@ specified in the command-line.
 In the standard JDK, when the CDS archive cannot be used for any reason (for example, the
 archive was created for a different version of the JDK), the application will
 continue to run without using CDS.
-This ensures that the application will function correctly, though at a lower level of performance.
 This fall-back strategy ensures that the application will function correctly, though at a lower level of performance.
 
-With the Leyden prototype, we have changed this fall-back behavior to make it easier to diagnose
+With the Leyden prototype, we have disabled this fall-back behavior by default to make it easier to diagnose
 performance issues. For example, when the start-up time is not as good as one would expect, we
 want know whether it's caused by a misconfiguration that prevents the CDS archive
 from being used, or it's caused by a deficiency in the implementation of the Leyden optimizations.
